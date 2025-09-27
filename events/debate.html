@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debate</title>
+  <link rel="stylesheet" href="events-page.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="container">
+    <!-- Right Image -->
+    <div class="right-section">
+      <img src="images2/debate.jpg" alt="Debate Event">
+    </div>
+
+    <!-- Left Content -->
+    <div class="left-section">
+      <h1>Debate</h1>
+
+      <h2>Rules and Regulations</h2>
+      <ul class="rules-list">
+        <li>Each group consists of 2 members.</li>
+        <li>Teams must stay on topic at all times.</li>
+        <li>No interruptions of the opposing team.</li>
+        <li>Offensive language, personal attacks, or unsportsmanlike behavior are strictly prohibited.</li>
+        <li>Teams must present original arguments; reading long scripts is discouraged.</li>
+        <li>Teams must introduce themselves before starting.</li>
+        <li>Judges’ decisions are final and binding.</li>
+        <li>Teams should report 5 minutes before their scheduled debate.</li>
+        <li>Misconduct or failure to follow rules may lead to disqualification.</li>
+      </ul>
+
+      <h2>Registration Fee</h2>
+      <p>₹ 50/-</p>
+
+      <h2>Prize Pool</h2>
+      <p>₹ 500/-</p>
+
+      <h2>Event Timing</h2>
+      <p>11 AM to 12 PM</p>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" id="agree-checkbox">
+          <span>I have read all the rules and regulations and will follow them.</span>
+        </label>
+      </div>
+
+      <button id="register-button" class="button" disabled
+              data-form-url="https://docs.google.com/forms/d/e/1FAIpQLScWF96c-x9H8PN62_4a8u_iLcUnjxM6DtYCGC0r0ZyqMRVJrg/viewform">
+        REGISTER
+      </button>
+    </div>
+  </div>
+
+  <script src="event-page.js"></script>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

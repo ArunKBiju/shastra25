@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Identification</title>
+  <link rel="stylesheet" href="events-page.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="container">
+    <!-- Right Image -->
+    <div class="right-section">
+      <img src="images2/logo-identification.jpg" alt="Logo Identification Event">
+    </div>
+
+    <!-- Left Content -->
+    <div class="left-section">
+      <h1>Logo Identification</h1>
+
+      <h2>Coordinators</h2>
+      <ul class="coordinators">
+        <li>
+          <strong>Nimisha P R</strong><br>
+          3rd year, ECE<br>
+          Mail: <a class="mail" href="mailto:nnimisha444@gmail.com">nnimisha444@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9645004658">9645004658</a>
+        </li>
+        <li>
+          <strong>Rasal Rasheed</strong><br>
+          3rd year, CSE<br>
+          Mail: <a class="mail" href="mailto:rassalr05@gmail.com">rassalr05@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:7994330671">7994330671</a>
+        </li>
+      </ul>
+
+      <h2>Event Timing</h2>
+      <p>2:00 PM – 2:30 PM</p>
+
+      <h2>Rules and Regulations</h2>
+      <ul class="rules-list">
+        <li>Participants must identify logos within a specified time.</li>
+        <li>No external help or references are allowed.</li>
+        <li>Each correct logo earns a point, and the participant with the highest score wins.</li>
+        <li>The organizers' decision will be final.</li>
+        <li>Switch off your mobile phones and submit them at the registration counter for safekeeping during the event.</li>
+      </ul>
+
+      <h2>Registration Fee</h2>
+      <p>₹20/-</p>
+
+      <h2>Prize Pool</h2>
+      <p>₹500/-</p>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" id="agree-checkbox">
+          <span>I have read all the rules and regulations and will follow them.</span>
+        </label>
+      </div>
+
+      <button id="register-button" class="button" disabled
+              data-form-url="https://docs.google.com/forms/d/e/1FAIpQLScZw69ULHN9OIlqXMDaoi2vLL7rgxuQ1PfJvqa2aTfyGECjnQ/viewform">
+        REGISTER
+      </button>
+    </div>
+  </div>
+
+  <script src="event-page.js"></script>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

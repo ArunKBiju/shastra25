@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find The Parts</title>
+  <link rel="stylesheet" href="events-page.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="container">
+    <!-- Right Image -->
+    <div class="right-section">
+      <img src="images2/find-the-parts.jpg" alt="Find The Parts Event">
+    </div>
+
+    <!-- Left Content -->
+    <div class="left-section">
+      <h1>Find The Parts</h1>
+
+      <h2>Coordinators</h2>
+      <ul class="coordinators">
+        <li>
+          <strong>Nimisha P R</strong><br>
+          3rd year, ECE<br>
+          Mail: <a class="mail" href="mailto:nnimisha444@gmail.com">nnimisha444@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9645004658">9645004658</a>
+        </li>
+        <li>
+          <strong>Rasal Rasheed</strong><br>
+          3rd year, CSE<br>
+          Mail: <a class="mail" href="mailto:rassalr05@gmail.com">rassalr05@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:7994330671">7994330671</a>
+        </li>
+      </ul>
+
+      <h2>Event Timing</h2>
+      <p>11:00 AM – 5:00 PM</p>
+
+      <h2>Rules and Regulations</h2>
+      <ul class="rules-list">
+        <li>Participants are shown a photo or image for a limited time.</li>
+        <li>Each photo has one or more missing parts.</li>
+        <li>Participants must identify and write/draw the missing parts correctly.</li>
+        <li>No mobile phones, internet, or external help is allowed.</li>
+        <li>Points are awarded for accuracy and speed.</li>
+        <li>The participant/team with the highest points at the end wins.</li>
+        <li>Time limit for each photo/image/logo display is 10 seconds.</li>
+        <li>Submit the answers within the given time.</li>
+        <li>Disqualified for incorrect submissions or rule violations.</li>
+        <li>In case of any disputes, the organizers' decision is final.</li>
+      </ul>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" id="agree-checkbox">
+          <span>I have read all the rules and regulations and will follow them.</span>
+        </label>
+      </div>
+
+      <button id="register-button" class="button" disabled
+              data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSciHJqI-XmkmdZqNonyan4VlAdwg26nre_fCs8KI3EScEnqfw/viewform">
+        REGISTER
+      </button>
+    </div>
+  </div>
+
+  <script src="event-page.js"></script>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

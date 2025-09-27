@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackathon</title>
+  <link rel="stylesheet" href="events-page.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="container">
+    <!-- Right Image -->
+    <div class="right-section">
+      <img src="images2/hackathon.jpg" alt="Hackathon Event">
+    </div>
+
+    <!-- Left Content -->
+    <div class="left-section">
+      <h1>Hackathon</h1>
+
+      <h2>Coordinators</h2>
+      <ul class="coordinators">
+        <li>
+          <strong>Aleena T Lobo</strong><br>
+          3rd year, ECE<br>
+          Mail: <a class="mail" href="mailto:aleenatlobo24@gmail.com">aleenatlobo24@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:7902618315">7902618315</a>
+        </li>
+        <li>
+          <strong>P D Ojes</strong><br>
+          3rd year, EEE<br>
+          Mail: <a class="mail" href="mailto:Ojespd143@gmail.com">Ojespd143@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9847931430">9847931430</a>
+        </li>
+      </ul>
+
+      <h2>Event Timing</h2>
+      <p>12 PM</p>
+
+      <h2>Rules and Regulations</h2>
+      <ul class="rules-list">
+        <li>You must participate individually or in teams as specified.</li>
+        <li>Follow all instructions provided by the organizers.</li>
+        <li>Cheating or unfair practices will result in disqualification.</li>
+        <li>Respect fellow participants and organizers at all times.</li>
+        <li>Make sure to complete tasks within the allocated time.</li>
+        <li>The organizers' decisions will be final.</li>
+      </ul>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" id="agree-checkbox">
+          <span>I have read all the rules and regulations and will follow them.</span>
+        </label>
+      </div>
+
+      <button id="register-button" class="button" disabled
+              data-form-url="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__mO4a31UOU9CM1JaQkdLTjBERU5QMVpQQ0VDTFQ0WS4u">
+        REGISTER
+      </button>
+    </div>
+  </div>
+
+  <script src="event-page.js"></script>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

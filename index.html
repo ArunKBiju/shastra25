@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHASTRA 2K25 Tech Fest</title>
+    <meta name="theme-color" content="#00b4d8">
+    <link rel="shortcut icon" href="images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: url('./images/bg-img.jpg') no-repeat center/cover fixed;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0, 0, 0, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 70%;
+            gap: 10px;
+        }
+
+        .navbar-left img.NavBar_logo {
+            height: 80px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .navbar-left img.NavBar_logo:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00b4d8;
+        }
+
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger-menu .line {
+            width: 30px;
+            height: 3px;
+            background: #ffffff;
+            transition: all 0.3s;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 5%;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .hero-title-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #00b4d8;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .kits-iedc-presents {
+            position: absolute;
+            top: -40px;
+            left: -100px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .event-date {
+            position: absolute;
+            bottom: -30px;
+            right: -100px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .hero-logo {
+            margin-top: 20px;
+        }
+
+        .hero-logo img {
+            height: 350px;
+            max-height: 20vw;
+            transition: transform 0.3s;
+        }
+
+        .hero-logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .events-text {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 40px 0;
+            color: #00b4d8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .events-button .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .events-button button {
+            background: #00b4d8;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .events-button button:hover {
+            background: #0096c7;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .events-button button:disabled {
+            background: #808080;
+            cursor: not-allowed;
+        }
+
+        .events-button button img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 5%;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .footer-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-images img {
+            height: 40px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .footer-images img:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 5%;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 900;
+        }
+
+        .scroll-footer.visible {
+            transform: translateY(0);
+        }
+
+        .scroll-footer-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .scroll-footer-images img {
+            height: 40px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .scroll-footer-images img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: block;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hamburger-menu {
+                display: flex;
+            }
+
+            .hero {
+                padding: 40px 5%;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                color: #ffffff;
+                font-weight: 300;
+                margin-bottom: 20px;
+            }
+
+            .events-button button {
+                font-size: 1rem;
+            }
+
+            .navbar-left {
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0 5%;
+            }
+
+            .navbar-left img.NavBar_logo {
+                height: 30px;
+            }
+
+            .hero-logo img {
+                height: 150px;
+                max-height: 80vw;
+            }
+
+            .kits-iedc-presents {
+                top: -30px;
+                left: -30px;
+                font-size: 1.2rem;
+            }
+
+            .event-date {
+                bottom: -20px;
+                right: -60px;
+                font-size: 1.2rem;
+            }
+
+            .footer-images {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, auto);
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .footer-images img {
+                height: 30px;
+            }
+
+            .scroll-footer-images {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, auto);
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .scroll-footer-images img {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="images/logo2.png" alt="Logo" class="NavBar_logo" />
+        </div>
+        <button class="hamburger-menu" aria-label="Toggle navigation">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-title-container">
+            <span class="kits-iedc-presents">KITS IEDC Presents</span>
+            <h1 class="hero-title">SHASTRA 2K25</h1>
+            <span class="event-date">on 14/10/2025</span>
+        </div>
+        <p class="hero-subtitle"></p>
+        <div class="hero-logo">
+            <img alt="logo" src="images/logo2.png" />
+        </div>
+    </section>
+
+    <h1 class="events-text">EVENTS</h1>
+
+    <div class="events-button" id="events-section">
+        <div class="container">
+            <button onclick="window.location.href='events/hackathon.html'">
+                <span>Hackathon</span>
+            </button>
+            <button onclick="window.location.href='events/presentation.html'">
+                <span>Presentation</span>
+            </button>
+            <button onclick="window.location.href='events/debate.html'">
+                <span>Debate</span>
+            </button>
+            <button onclick="window.location.href='events/games.html'">
+                <span>Games</span>
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-images">
+            <img src="images/kits.png" alt="Event Image 1" />
+            <img src="images/iedc.jpg" alt="Event Image 2" />
+            <img src="images/ic.png" alt="Event Image 3" />
+            <img src="images/iedc2.png" alt="Event Image 4" />
+            <img src="images/iic.png" alt="Event Image 5" />
+            <img src="images/ktu.png" alt="Event Image 6" />
+        </div>
+    </footer>
+
+    <div class="scroll-footer">
+        <div class="scroll-footer-images">
+            <img src="images/kits.png" alt="Event Image 1" />
+            <img src="images/iedc.jpg" alt="Event Image 2" />
+            <img src="images/ic.png" alt="Event Image 3" />
+            <img src="images/iedc2.png" alt="Event Image 4" />
+            <img src="images/iic.png" alt="Event Image 5" />
+            <img src="images/ktu.png" alt="Event Image 6" />
+        </div>
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Theme color handling
+        function setThemeColor() {
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', isDarkMode ? '#2c2c2c' : '#00b4d8');
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setThemeColor);
+        window.addEventListener('DOMContentLoaded', setThemeColor);
+
+        // Scroll footer visibility
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const footer = document.querySelector('.scroll-footer');
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

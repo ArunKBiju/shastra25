@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games Events</title>
+  <link rel="stylesheet" href="events-page.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('../images/logo-2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .games-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .games-container h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    .games-buttons {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .games-buttons a {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+
+    .games-buttons a:hover {
+      background-color: #00b4d8;
+      color: #000;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="games-container">
+    <h1>Games Events</h1>
+    <div class="games-buttons">
+      <a href="technical-games.html">Technical Games</a>
+      <a href="common-games.html">Common Games</a>
+      <a href="e-games.html">E-Games</a>
+    </div>
+  </div>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

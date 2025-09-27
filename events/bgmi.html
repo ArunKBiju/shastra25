@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMI</title>
+  <link rel="stylesheet" href="events-page.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="container">
+    <!-- Right Image -->
+    <div class="right-section">
+      <img src="images2/bgmi.jpg" alt="BGMI Event">
+    </div>
+
+    <!-- Left Content -->
+    <div class="left-section">
+      <h1>BGMI</h1>
+
+      <h2>Coordinators</h2>
+      <ul class="coordinators">
+        <li>
+          <strong>Minnu Shaju</strong><br>
+          3rd year, CSE<br>
+          Mail: <a class="mail" href="mailto:minnushajupnair@gmail.com">minnushajupnair@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9544496457">9544496457</a>
+        </li>
+        <li>
+          <strong>Abhimanyu M Nair</strong><br>
+          3rd year, ECE<br>
+          Mail: <a class="mail" href="mailto:abhimanyumnair777@gmail.com">abhimanyumnair777@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9446040573">9446040573</a>
+        </li>
+      </ul>
+
+      <h2>Event Timing</h2>
+      <p>12:00 PM – 1:00 PM</p>
+
+      <h2>Rules and Regulations</h2>
+      <ul class="rules-list">
+        <li>All players must join the match within the designated time.</li>
+        <li>Players must remain in the game until the match ends.</li>
+        <li>No use of third-party tools or hacks; fair play is required.</li>
+        <li>Respect your teammates and opponents during the game.</li>
+        <li>The player with the most kills or the last survivor wins.</li>
+        <li>Penalty for disconnections: Rules apply to players who disconnect or leave the match prematurely.</li>
+        <li>In case of any disputes, the organizers' decision is final.</li>
+      </ul>
+
+      <h2>Registration Fee</h2>
+      <p>₹30/-</p>
+
+      <h2>Prize Pool</h2>
+      <p>₹500/-</p>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" id="agree-checkbox">
+          <span>I have read all the rules and regulations and will follow them.</span>
+        </label>
+      </div>
+
+      <button id="register-button" class="button" disabled
+              data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdOwApMEfrLU5jg6qMI_hYp4zsy-AnL5txRh-z3vc_s0Zv5sA/viewform">
+        REGISTER
+      </button>
+    </div>
+  </div>
+
+  <script src="event-page.js"></script>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

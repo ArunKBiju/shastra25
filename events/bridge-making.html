@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridge Making</title>
+  <link rel="stylesheet" href="events-page.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="container">
+    <!-- Right Image -->
+    <div class="right-section">
+      <img src="images2/bridge-making.jpg" alt="Bridge Making Event">
+    </div>
+
+    <!-- Left Content -->
+    <div class="left-section">
+      <h1>Bridge Making</h1>
+
+      <h2>Coordinators</h2>
+      <ul class="coordinators">
+        <li>
+          <strong>Nimisha P R</strong><br>
+          3rd year, ECE<br>
+          Mail: <a class="mail" href="mailto:nnimisha444@gmail.com">nnimisha444@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9645004658">9645004658</a>
+        </li>
+        <li>
+          <strong>Rasal Rasheed</strong><br>
+          3rd year, CSE<br>
+          Mail: <a class="mail" href="mailto:rassalr05@gmail.com">rassalr05@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:7994330671">7994330671</a>
+        </li>
+      </ul>
+
+      <h2>Event Timing</h2>
+      <p>11:00 AM – 12:00 PM</p>
+
+      <h2>Rules and Regulations</h2>
+      <ul class="rules-list">
+        <li>Follow the provided materials and instructions carefully.</li>
+        <li>The bridge must be able to support a certain weight.</li>
+        <li>No external tools or materials are allowed.</li>
+        <li>Respect all safety guidelines during the construction.</li>
+        <li>Judging will be based on design, strength, and creativity.</li>
+        <li>The organizers' decision will be final.</li>
+        <li><strong>Time Limit:</strong> 30 minutes</li>
+        <li><strong>Team Size:</strong> 2 members</li>
+        <li><strong>Registration Fee:</strong> ₹40/-</li>
+        <li><strong>Prize Pool:</strong> ₹500/-</li>
+      </ul>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" id="agree-checkbox">
+          <span>I have read all the rules and regulations and will follow them.</span>
+        </label>
+      </div>
+
+      <button id="register-button" class="button" disabled
+              data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSd97Wc_BctkEhDANuSAELOI5E-FGlMl7bZtZXN-R5OTj6w7yA/viewform">
+        REGISTER
+      </button>
+    </div>
+  </div>
+
+  <script src="event-page.js"></script>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

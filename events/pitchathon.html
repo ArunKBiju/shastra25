@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pitchathon</title>
+  <link rel="stylesheet" href="events-page.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="container">
+    <!-- Right Image -->
+    <div class="right-section">
+      <img src="images2/pitchathon.jpg" alt="Pitchathon Event">
+    </div>
+
+    <!-- Left Content -->
+    <div class="left-section">
+      <h1>Pitchathon</h1>
+
+      <h2>Coordinators</h2>
+      <ul class="coordinators">
+        <li>
+          <strong>Nimisha P R</strong><br>
+          3rd year, ECE<br>
+          Mail: <a class="mail" href="mailto:nnimisha444@gmail.com">nnimisha444@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9645004658">9645004658</a>
+        </li>
+        <li>
+          <strong>Rasal Rasheed</strong><br>
+          3rd year, CSE<br>
+          Mail: <a class="mail" href="mailto:rassalr05@gmail.com">rassalr05@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:7994330671">7994330671</a>
+        </li>
+      </ul>
+
+      <h2>Event Timing</h2>
+      <p>2:30 PM – 4:00 PM</p>
+
+      <h2>Rules and Regulations</h2>
+      <ul class="rules-list">
+        <li>Participants can register individually or in a team of 2.</li>
+        <li>Each team can only submit one idea.</li>
+        <li>Ideas should aim to solve a real-world problem or present an innovative solution.</li>
+        <li>Each team gets <strong>10 minutes</strong> to present their pitch.</li>
+        <li>Teams may use slides, demos, or prototypes.</li>
+        <li>In case of disputes, the organizers’ decision is final.</li>
+        <li><strong>Judging Criteria:</strong> Innovation, feasibility, and impact.</li>
+        <li><strong>Registration Fee:</strong> ₹50/-</li>
+        <li><strong>Prize Pool:</strong> ₹1000/-</li>
+      </ul>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" id="agree-checkbox">
+          <span>I have read all the rules and regulations and will follow them.</span>
+        </label>
+      </div>
+
+      <button id="register-button" class="button" disabled
+              data-form-url="https://docs.google.com/forms/d/e/1FAIpQLScdObX2yBbVWY1eGMN_7ndcrQIUsmUQ13XSxBtilDnwgPMWqQ/viewform">
+        REGISTER
+      </button>
+    </div>
+  </div>
+
+  <script src="event-page.js"></script>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="events-page.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 120px auto 50px auto;
+      padding: 20px;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00b4d8;
+    }
+
+    .container h2 {
+      font-size: 2rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+
+    .contact-block {
+      margin-bottom: 30px;
+    }
+
+    .contact-block p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .contact-block strong {
+      color: #00b4d8;
+    }
+
+    .star {
+      box-shadow: 0 0 6px 2px #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <div class="contact-block">
+      <h2>IEDC Nodal Officer</h2>
+      <p><strong>Prof Rahul P Raj</strong>, Associate Professor & HoD - EEE / IEDC Nodal Officer</p>
+      <p>Mail ID: <a href="mailto:rahuprj@gmail.com" style="color:#ffd700;">rahuprj@gmail.com</a></p>
+      <p>Contact No: <a href="tel:+919605441461" style="color:#ffd700;">+91-9605441461</a></p>
+    </div>
+
+    <div class="contact-block">
+      <h2>Main Coordinators</h2>
+      <p><strong>Nimisha P R</strong>, 3rd year, ECE</p>
+      <p>Mail ID: <a href="mailto:nnimisha444@gmail.com" style="color:#ffd700;">nnimisha444@gmail.com</a></p>
+      <p>Contact No: <a href="tel:9645004658" style="color:#ffd700;">9645004658</a></p>
+
+      <p><strong>Rasal Rasheed</strong>, 3rd year, CSE</p>
+      <p>Mail ID: <a href="mailto:rassalr05@gmail.com" style="color:#ffd700;">rassalr05@gmail.com</a></p>
+      <p>Contact No: <a href="tel:7994330671" style="color:#ffd700;">7994330671</a></p>
+    </div>
+
+    <div class="contact-block">
+      <h2>Hackathon Coordinators</h2>
+      <p><strong>Aleena T Lobo</strong>, 3rd year, ECE</p>
+      <p>Mail ID: <a href="mailto:aleenatlobo24@gmail.com" style="color:#ffd700;">aleenatlobo24@gmail.com</a></p>
+      <p>Contact No: <a href="tel:7902618315" style="color:#ffd700;">7902618315</a></p>
+
+      <p><strong>P D Ojes</strong>, 3rd year, EEE</p>
+      <p>Mail ID: <a href="mailto:Ojespd143@gmail.com" style="color:#ffd700;">Ojespd143@gmail.com</a></p>
+      <p>Contact No: <a href="tel:9847931430" style="color:#ffd700;">9847931430</a></p>
+    </div>
+
+    <div class="contact-block">
+      <h2>Game Coordinators</h2>
+      <p><strong>Minnu Shaju</strong>, 3rd year, CSE</p>
+      <p>Mail ID: <a href="mailto:minnushajupnair@gmail.com" style="color:#ffd700;"> minnushajupnair@gmail.com</a></p>
+      <p>Contact No: <a href="tel:9544496457" style="color:#ffd700;">9544496457</a></p>
+
+      <p><strong>Abhimanyu M Nair</strong>, 3rd year, ECE</p>
+      <p>Mail ID: <a href="mailto:abhimanyumnair777@gmail.com" style="color:#ffd700;"> abhimanyumnair777@gmail.com</a></p>
+      <p>Contact No: <a href="tel:9446040573" style="color:#ffd700;">9446040573</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Load header
+    fetch("events/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+
+    const starCount = 80;
+    for(let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      const size = Math.random() * 3 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.animationDuration = `${Math.random() * 3 + 1}s`;
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>

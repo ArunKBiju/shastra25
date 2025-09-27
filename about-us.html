@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="events-page.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 120px auto 50px auto;
+      padding: 20px;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00b4d8;
+    }
+
+    .container h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+
+    .container p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .container ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .container ul li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .star {
+      box-shadow: 0 0 6px 2px #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="container">
+    <h1>About Us</h1>
+    <h2>About KITS IEDC</h2>
+    <p>
+      The Innovation and Entrepreneurship Development Centre (IEDC) at KITS serves as a dynamic platform dedicated to fostering a culture of innovation and entrepreneurship among students. Operating under the guidance of the Kerala Startup Mission, the IEDC aims to transform students' innovative ideas into impactful ventures.
+    </p>
+
+    <h2>Key Objectives:</h2>
+    <ul>
+      <li><strong>Idea Incubation:</strong> Providing mentorship and resources to help students develop and refine their ideas.</li>
+      <li><strong>Skill Development:</strong> Organizing workshops and training sessions to enhance entrepreneurial skills.</li>
+      <li><strong>Networking Opportunities:</strong> Connecting students with industry experts and successful entrepreneurs.</li>
+      <li><strong>Startup Support:</strong> Assisting in the establishment and growth of student-led startups.</li>
+    </ul>
+
+    <p>
+      Through these initiatives, the IEDC at KITS aims to nurture the next generation of entrepreneurs and innovators, contributing to the economic and technological advancement of the region.
+    </p>
+  </div>
+
+  <script>
+    // Load header
+    fetch("events/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+
+    const starCount = 80;
+    for(let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      const size = Math.random() * 3 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.animationDuration = `${Math.random() * 3 + 1}s`;
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>

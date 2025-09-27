@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Football</title>
+  <link rel="stylesheet" href="events-page.css">
+</head>
+<body>
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <div class="container">
+    <!-- Right Image -->
+    <div class="right-section">
+      <img src="images2/efootbal.jpg" alt="E-Football Event">
+    </div>
+
+    <!-- Left Content -->
+    <div class="left-section">
+      <h1>E-Football</h1>
+
+      <h2>Coordinators</h2>
+      <ul class="coordinators">
+        <li>
+          <strong>Minnu Shaju</strong><br>
+          3rd year, CSE<br>
+          Mail: <a class="mail" href="mailto:minnushajupnair@gmail.com">minnushajupnair@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9544496457">9544496457</a>
+        </li>
+        <li>
+          <strong>Abhimanyu M Nair</strong><br>
+          3rd year, ECE<br>
+          Mail: <a class="mail" href="mailto:abhimanyumnair777@gmail.com">abhimanyumnair777@gmail.com</a><br>
+          Contact: <a class="phone" href="tel:9446040573">9446040573</a>
+        </li>
+      </ul>
+
+      <h2>Event Timing</h2>
+      <p>2:30 PM – 4:00 PM</p>
+
+      <h2>Rules and Regulations</h2>
+      <ul class="rules-list">
+        <li><strong>Match Rules:</strong>
+          <ul>
+            <li>Time: 6 minutes</li>
+            <li>Form: Random</li>
+            <li>Subs: 5</li>
+            <li>Penalty On, Extra Time Off, Injury Off</li>
+          </ul>
+        </li>
+        <li>All players must join the match within the designated time.</li>
+        <li>Players must remain in the game until the match ends.</li>
+        <li>Respect your teammates and opponents during the game.</li>
+        <li>We are not responsible for range issues; you may play from anywhere.</li>
+        <li>If the match is stopped due to range issues, use remaining time and set aggregate accordingly.</li>
+        <li>In case of any disputes, the organizers' decision is final.</li>
+      </ul>
+
+      <h2>Registration Fee</h2>
+      <p>₹50/-</p>
+
+      <h2>Prize Pool</h2>
+      <p>₹500/-</p>
+
+      <div class="agreement">
+        <label>
+          <input type="checkbox" id="agree-checkbox">
+          <span>I have read all the rules and regulations and will follow them.</span>
+        </label>
+      </div>
+
+      <button id="register-button" class="button" disabled
+              data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdgEO1YmhiQ-9-4-7BHc0qQWFR9yvhVRBst2j8h7Ms9eWf7-A/viewform">
+        REGISTER
+      </button>
+    </div>
+  </div>
+
+  <script src="event-page.js"></script>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.toggle('active');
+        });
+      });
+  </script>
+</body>
+</html>
