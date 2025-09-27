@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
-  <link rel="stylesheet" href="events-page.css">
   <style>
     body {
       margin: 0;
@@ -119,7 +118,7 @@
 
   <script>
     // Load header
-    fetch("events/header.html")
+    fetch("header.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("header").innerHTML = data;
