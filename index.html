@@ -99,6 +99,44 @@
             position: relative;
         }
 
+        .hero-top-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .kits-logo-top {
+            height: 60px;
+            width: auto;
+            border-radius: 5px;
+        }
+
+        .kits-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .kits-full-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00b4d8;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .kits-affiliation {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-top: 2px;
+        }
+
+        /* Hero title */
         .hero-title-container {
             position: relative;
             display: inline-block;
@@ -253,10 +291,6 @@
             transition: transform 0.3s;
         }
 
-        .scroll-footer-images img:hover {
-            transform: scale(1.1);
-        }
-
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -283,6 +317,24 @@
 
             .hero {
                 padding: 40px 5%;
+            }
+
+            .hero-top-info {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+
+            .kits-logo-top {
+                height: 40px;
+            }
+
+            .kits-full-name {
+                font-size: 1.2rem;
+            }
+
+            .kits-affiliation {
+                font-size: 0.8rem;
             }
 
             .hero-title {
@@ -375,6 +427,14 @@
     </nav>
 
     <section class="hero">
+        <div class="hero-top-info">
+            <img src="images/logo2.png" alt="KITS Logo" class="kits-logo-top" />
+            <div class="kits-text-container">
+                <span class="kits-full-name">KOTTAYAM INSTITUTE OF TECHNOLOGY AND SCIENCE</span>
+                <span class="kits-affiliation">(Approved by AICTE & Affiliated to APJ Abdul Kalam Technological University)</span>
+            </div>
+        </div>
+
         <div class="hero-title-container">
             <span class="kits-iedc-presents">KITS IEDC Presents</span>
             <h1 class="hero-title">SHASTRA 2K25</h1>
@@ -428,12 +488,10 @@
     </div>
 
     <script>
-        // Hamburger menu toggle
         document.querySelector('.hamburger-menu').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Theme color handling
         function setThemeColor() {
             const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
             document.querySelector('meta[name="theme-color"]').setAttribute('content', isDarkMode ? '#2c2c2c' : '#00b4d8');
@@ -442,7 +500,6 @@
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setThemeColor);
         window.addEventListener('DOMContentLoaded', setThemeColor);
 
-        // Scroll footer visibility
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
